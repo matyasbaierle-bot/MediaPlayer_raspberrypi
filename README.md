@@ -84,6 +84,22 @@ sudo systemctl start rgb-loop.service
 - **Bez zvuku?** Zkontrolujte, zda je `vlc` správně nainstalované a audio výstup nastavený v Raspberry Pi OS.
 - **Nejde spustit GUI?** Ujistěte se, že máte `python3-tk` (`sudo apt install python3-tk`).
 - **Playlist je prázdný?** Ověřte přípony souborů a cestu k médiím v nastavení.
+- **Chci si to jen rychle vyzkoušet:**
+  1. Stáhněte mini testovací video (cca 1 MB) přímo do složky `media/`:
+     ```bash
+     mkdir -p media
+     wget -O media/test.mp4 https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4
+     ```
+  2. Spusťte přehrávač v GUI a v dialogu vyberte složku `media/`:
+     ```bash
+     python3 main.py
+     ```
+  3. Klikněte na **Uložit nastavení** a poté **Spustit/Obnovit**. Video se začne přehrávat v nekonečné smyčce.
+  4. Pokud chcete hned headless režim, spusťte:
+     ```bash
+     python3 main.py --headless
+     ```
+     Přehrávání se spustí samo podle uložené konfigurace.
 
 ## Licence
 MIT – můžete volně použít a upravit pro školní projekty.
